@@ -1,0 +1,186 @@
+object Form1: TForm1
+  Left = 491
+  Height = 691
+  Top = 173
+  Width = 1071
+  Caption = 'Kalorien-Tracker'
+  ClientHeight = 691
+  ClientWidth = 1071
+  Color = clWhite
+  Font.Height = -19
+  OnCreate = FormCreate
+  LCLVersion = '2.2.0.4'
+  object ListView1: TListView
+    Left = 0
+    Height = 448
+    Top = 120
+    Width = 1071
+    Align = alClient
+    Color = 9803193
+    Columns = <    
+      item
+        AutoSize = True
+        Caption = 'Nahrungsart'
+        Width = 110
+      end    
+      item
+        AutoSize = True
+        Caption = 'Nahrungsmittel'
+        Width = 134
+      end    
+      item
+        AutoSize = True
+        Caption = 'Marke'
+        Width = 62
+      end    
+      item
+        AutoSize = True
+        Caption = 'Proteine'
+        Width = 80
+      end    
+      item
+        AutoSize = True
+        Caption = 'Fett'
+        Width = 46
+      end    
+      item
+        AutoSize = True
+        Caption = 'Gesättigtes Fett'
+        Width = 140
+      end    
+      item
+        AutoSize = True
+        Caption = 'Kohlenhydrate'
+        Width = 126
+      end    
+      item
+        AutoSize = True
+        Caption = 'Zucker'
+        Width = 66
+      end    
+      item
+        AutoSize = True
+        Caption = 'Ballaststoffe'
+        Width = 115
+      end    
+      item
+        AutoSize = True
+        Caption = 'Salz'
+        Width = 46
+      end    
+      item
+        AutoSize = True
+        Caption = 'Kalorien'
+        Width = 131
+      end>
+    TabOrder = 0
+    ViewStyle = vsReport
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 123
+    Top = 568
+    Width = 1071
+    Align = alBottom
+    Caption = 'PANEL BOTTOM'
+    ClientHeight = 123
+    ClientWidth = 1071
+    Color = clGrayText
+    ParentColor = False
+    TabOrder = 1
+    object Button5: TButton
+      Left = 1
+      Height = 121
+      Top = 1
+      Width = 275
+      Align = alLeft
+      Caption = 'NAHRUNGEN'
+      Font.Color = clWhite
+      Font.Height = -32
+      OnClick = Button5Click
+      ParentFont = False
+      TabOrder = 0
+    end
+    object Button7: TButton
+      Left = 795
+      Height = 121
+      Top = 1
+      Width = 275
+      Align = alRight
+      Caption = 'TRACKER'
+      Font.Color = clWhite
+      Font.Height = -32
+      OnClick = Button7Click
+      ParentFont = False
+      TabOrder = 1
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 120
+    Top = 0
+    Width = 1071
+    Align = alTop
+    Caption = 'PANEL TOP'
+    ClientHeight = 120
+    ClientWidth = 1071
+    Color = clGrayText
+    ParentColor = False
+    TabOrder = 2
+    OnClick = Panel1Click
+    object Button1: TButton
+      Left = 72
+      Height = 32
+      Top = 24
+      Width = 90
+      Caption = 'Button1'
+      OnClick = Button1Click
+      TabOrder = 0
+    end
+    object Button2: TButton
+      Left = 73
+      Height = 33
+      Top = 72
+      Width = 89
+      Caption = 'Button2'
+      OnClick = Button2Click
+      TabOrder = 1
+    end
+    object Button3: TButton
+      Left = 192
+      Height = 32
+      Top = 24
+      Width = 96
+      Caption = 'Button3'
+      OnClick = Button3Click
+      TabOrder = 2
+    end
+    object Button4: TButton
+      Left = 192
+      Height = 33
+      Top = 72
+      Width = 96
+      Caption = '+ Nahrung'
+      OnClick = Button4Click
+      TabOrder = 3
+    end
+    object Button6: TButton
+      Left = 952
+      Height = 33
+      Top = 72
+      Width = 104
+      Caption = 'PROFIL'
+      OnClick = Button6Click
+      TabOrder = 4
+    end
+    object Button8: TButton
+      Left = 952
+      Height = 32
+      Top = 24
+      Width = 104
+      Caption = 'OPTIONEN'
+      OnClick = Button8Click
+      TabOrder = 5
+    end
+  end
+end
