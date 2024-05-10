@@ -9,7 +9,7 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="CalorieTracker"/>
         <EditorIndex Value="4"/>
-        <UsageCount Value="43"/>
+        <UsageCount Value="46"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -19,8 +19,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="NewNutrient"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <UsageCount Value="37"/>
+        <TopLine Value="154"/>
+        <CursorPos X="35" Y="164"/>
+        <UsageCount Value="40"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -28,7 +31,7 @@
         <Filename Value="profile.pas"/>
         <UnitName Value="Profile"/>
         <EditorIndex Value="3"/>
-        <UsageCount Value="21"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -52,10 +55,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Gui"/>
-        <CursorPos X="24" Y="18"/>
-        <UsageCount Value="20"/>
+        <CursorPos X="49" Y="98"/>
+        <ComponentState Value="1"/>
+        <UsageCount Value="22"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="/usr/lib/lazarus/2.2.0/lcl/include/customform.inc"/>
@@ -67,10 +70,9 @@
       <Unit>
         <Filename Value="groclist.pas"/>
         <UnitName Value="GrocList"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="10" Y="13"/>
-        <UsageCount Value="14"/>
+        <CursorPos X="42" Y="21"/>
+        <UsageCount Value="16"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -96,13 +98,15 @@
       <Unit>
         <Filename Value="/usr/share/fpcsrc/3.2.2/packages/fcl-json/src/fpjson.pp"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="10"/>
+        <TopLine Value="597"/>
+        <CursorPos X="3" Y="604"/>
+        <UsageCount Value="11"/>
       </Unit>
       <Unit>
         <Filename Value="/usr/share/fpcsrc/3.2.2/rtl/objpas/sysutils/filutilh.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="182"/>
-        <CursorPos X="10" Y="201"/>
+        <CursorPos X="10" Y="200"/>
         <UsageCount Value="10"/>
       </Unit>
       <Unit>
@@ -111,128 +115,253 @@
         <CursorPos X="10" Y="21"/>
         <UsageCount Value="10"/>
       </Unit>
+      <Unit>
+        <Filename Value="/usr/lib/lazarus/2.2.0/lcl/forms.pp"/>
+        <UnitName Value="Forms"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="28"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/share/fpcsrc/3.2.2/rtl/unix/sysutils.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="34"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/share/fpcsrc/3.2.2/rtl/linux/linux.pp"/>
+        <UnitName Value="Linux"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="10"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/share/fpcsrc/3.2.2/rtl/unix/unixtype.pp"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/share/fpcsrc/3.2.2/rtl/inc/systemh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="421"/>
+        <CursorPos X="3" Y="433"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/share/fpcsrc/3.2.2/rtl/linux/ptypes.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="107"/>
+        <CursorPos X="5" Y="124"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/share/fpcsrc/3.2.2/rtl/unix/ctypes.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="25"/>
+        <CursorPos X="34" Y="46"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/share/fpcsrc/3.2.2/rtl/objpas/sysutils/finah.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="15"/>
+        <CursorPos X="42" Y="23"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/share/fpcsrc/3.2.2/rtl/inc/objpash.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="208"/>
+        <CursorPos X="21" Y="215"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/share/fpcsrc/3.2.2/rtl/objpas/sysutils/sysutilh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="266"/>
+        <CursorPos X="3" Y="280"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/share/fpcsrc/3.2.2/rtl/unix/sysunixh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="13"/>
+        <CursorPos X="2" Y="31"/>
+        <UsageCount Value="10"/>
+      </Unit>
+      <Unit>
+        <Filename Value="/usr/share/fpcsrc/3.2.2/rtl/linux/system.pp"/>
+        <UnitName Value="System"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="28"/>
+        <CursorPos Y="22"/>
+        <UsageCount Value="10"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="28">
+    <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Column="76"/>
-      </Position>
-      <Position>
-        <Filename Value="newnutrient.pas"/>
-        <Caret Line="62" Column="41" TopLine="49"/>
+        <Caret Line="173" TopLine="165"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="25" Column="29" TopLine="7"/>
+        <Caret Line="156" Column="39" TopLine="140"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="136" Column="11" TopLine="127"/>
-      </Position>
-      <Position>
-        <Filename Value="groclist.pas"/>
-        <Caret Line="29" Column="25" TopLine="22"/>
-      </Position>
-      <Position>
-        <Filename Value="groclist.pas"/>
-        <Caret Line="38" TopLine="22"/>
+        <Caret Line="151" TopLine="140"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="11" Column="11"/>
-      </Position>
-      <Position>
-        <Filename Value="groclist.pas"/>
-        <Caret Line="12" Column="5" TopLine="4"/>
-      </Position>
-      <Position>
-        <Filename Value="groclist.pas"/>
-        <Caret Line="13" Column="63" TopLine="7"/>
-      </Position>
-      <Position>
-        <Filename Value="groclist.pas"/>
-        <Caret Line="40" Column="25" TopLine="30"/>
-      </Position>
-      <Position>
-        <Filename Value="groclist.pas"/>
-        <Caret Line="44" Column="12" TopLine="30"/>
+        <Caret Line="153" Column="85" TopLine="140"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="135" Column="6" TopLine="129"/>
-      </Position>
-      <Position>
-        <Filename Value="groclist.pas"/>
-        <Caret Line="80" Column="13" TopLine="74"/>
+        <Caret Line="168" Column="39" TopLine="159"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="135" Column="6" TopLine="129"/>
-      </Position>
-      <Position>
-        <Filename Value="groclist.pas"/>
-        <Caret Line="24" Column="5" TopLine="17"/>
+        <Caret Line="150" TopLine="140"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="140" TopLine="120"/>
+        <Caret Line="153" TopLine="140"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="114" Column="18" TopLine="106"/>
-      </Position>
-      <Position>
-        <Filename Value="groclist.pas"/>
-        <Caret Line="100" Column="17" TopLine="85"/>
+        <Caret Line="156" TopLine="140"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="162" Column="12" TopLine="157"/>
+        <Caret Line="157" TopLine="141"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="77" Column="14" TopLine="70"/>
+        <Caret Line="153" Column="50" TopLine="141"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="158" Column="19" TopLine="150"/>
+        <Caret Line="177" TopLine="168"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="177" Column="27" TopLine="161"/>
+        <Caret Line="181" TopLine="168"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="182" Column="27" TopLine="167"/>
+        <Caret Line="182" TopLine="168"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="203" Column="27" TopLine="197"/>
+        <Caret Line="183" TopLine="168"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="202" Column="31" TopLine="200"/>
+        <Caret Line="184" TopLine="168"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="175" Column="31" TopLine="167"/>
+        <Caret Line="185" TopLine="169"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="155" Column="30" TopLine="147"/>
+        <Caret Line="186" TopLine="170"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="242" Column="5" TopLine="231"/>
+        <Caret Line="187" TopLine="171"/>
       </Position>
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="194" Column="19" TopLine="186"/>
+        <Caret Line="188" TopLine="172"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="189" TopLine="173"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="190" TopLine="174"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="191" TopLine="175"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="192" TopLine="176"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="193" TopLine="177"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="196" TopLine="187"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="199" TopLine="187"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="200" TopLine="187"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="201" TopLine="187"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="202" TopLine="187"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="205" TopLine="189"/>
       </Position>
     </JumpHistory>
     <RunParams>
       <FormatVersion Value="2"/>
-      <Modes ActiveMode=""/>
+      <Modes ActiveMode="default">
+        <Mode Name="default">
+          <local>
+            <CommandLineParams Value="/media/kimbanton/N8s-Store/Projects/Pascal/CalorieTracker/groclist/"/>
+          </local>
+        </Mode>
+        <Mode Name="GROCLIST">
+          <local>
+            <CommandLineParams Value="/media/kimbanton/N8s-Store/Projects/Pascal/CalorieTracker/groclist/"/>
+          </local>
+        </Mode>
+      </Modes>
     </RunParams>
+    <HistoryLists>
+      <List Name="CommandLineParameters" Count="2">
+        <Item1 Value="/media/kimbanton/N8s-Store/Projects/Pascal/CalorieTracker/groclist/"/>
+        <Item2 Value="/media/kimbanton/N8s-Store/Projects/Pascal/CalorieTracker/groclist"/>
+      </List>
+    </HistoryLists>
   </ProjectSession>
+  <Debugging>
+    <Watches>
+      <Item>
+        <Expression Value="existingJsonString"/>
+      </Item>
+      <Item>
+        <Expression Value="existingJsonLine"/>
+      </Item>
+      <Item>
+        <Expression Value="outputPath + &apos;groclist.json&apos;"/>
+      </Item>
+      <Item>
+        <Expression Value="outputPath"/>
+      </Item>
+      <Item>
+        <Expression Value="PCVal"/>
+      </Item>
+      <Item>
+        <Expression Value="param"/>
+      </Item>
+    </Watches>
+  </Debugging>
 </CONFIG>

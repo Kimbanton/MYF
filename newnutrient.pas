@@ -24,11 +24,13 @@ type
       LABEL_Brand : TLabel;
       LABEL_PortionType : TLabel;
       LABEL_PortionSize : TLabel;
+
       EDIT_CropName : TEdit;
       EDIT_CropType : TEdit;
       EDIT_Brand : TEdit;
       EDIT_PortionType : TEdit;
       EDIT_PortionSize : TEdit;
+
     PANEL_Macro : TPanel;
       LABEL_MacroTitle : TLabel;
       LABEL_Protein : TLabel;
@@ -39,6 +41,7 @@ type
       LABEL_Fibre : TLabel;
       LABEL_Salt : TLabel;
       LABEL_SatFat : TLabel;
+
       EDIT_Protein : TEdit;
       EDIT_Fat : TEdit;
       EDIT_Carb : TEdit;
@@ -47,7 +50,9 @@ type
       EDIT_Salt : TEdit;
       EDIT_SatFat : TEdit;
       EDIT_Fibre : TEdit;
+
       PANEL_WhiteLine : TPanel;
+
     BUTTON_Add : TButton;
 
     {### PROCEDURES ###}
@@ -138,18 +143,19 @@ procedure saveGroc;
     {sets JSON file location to current directory}
     outputPath := ExtractFilePath(ParamStr(0));
 
-    {appends "groclist" folder as source code's directory path}
-    outputPath := IncludeTrailingPathDelimiter(outputPath) + 'groclist' + PathDelim;
+//    {appends "groclist" folder as source code's directory path}
+//    outputPath := IncludeTrailingPathDelimiter(outputPath) + PathDelim + 'groclist';
 
-    {ensures the 'groclist' folder exists, creates it if it doesn't}
-    if not DirectoryExists(outputPath)
-      then CreateDir(outputPath);
+//    {ensures the 'groclist' folder exists, creates it if it doesn't}
+//    if not DirectoryExists(outputPath)
+//      then CreateDir(outputPath);
 
     {checks if the JSON file already exists}
     if FileExists(outputPath + 'groclist.json')
       then
         begin
           {reads existing JSON data}
+          existingJsonString := '';
           assign(existingJsonFile, outputPath + 'groclist.json');
           reset(existingJsonFile);
           while not Eof(existingJsonFile) do
@@ -162,8 +168,7 @@ procedure saveGroc;
         end
       else
         begin
-          {creates new JSON object, if file doesn't exist}
-          jsonGroc := TJSONObject.create;
+          jsonGroc := TJSONObject.create; //creates new JSON object, if file doesn't exist
         end;
 
     {adds new input data to existing JSON object}
@@ -190,206 +195,224 @@ procedure saveGroc;
     write(jsonFile, jsonString);
     close(jsonFile);
 
-    {frees memory}
+    {frees memory to prevent unnecessary memory leak}
     jsonGroc.Free;
   end;
 
 
-//////////////////////////////////////////////////////////////////////
-//##################################################################//
-//##################################################################//
-//####################                          ####################//
-//####################   GRAPHICAL PROCEDURES   ####################//
-//####################                          ####################//
-//##################################################################//
-//##################################################################//
-//////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//######################################################################//
+//######################################################################//
+//####################                              ####################//
+//####################     GRAPHICAL PROCEDURES     ####################//
+//####################                              ####################//
+//######################################################################//
+//######################################################################//
+//////////////////////////////////////////////////////////////////////////
 
 {##### TGrocEntry #####}
 
-//////////////////////////////////////////////////
-////////////////////  PANELS  ////////////////////
-//////////////////////////////////////////////////
-
+//////////////////////////////////////////////////////////////////////
+/////////////////////////////   PANELS   /////////////////////////////
+//////////////////////////////////////////////////////////////////////
 
 
 procedure TGrocEntry.PANEL_GrocClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
 
 
 procedure TGrocEntry.PANEL_MacroClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.LABEL_FatClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.EDIT_ProteinChange(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.BUTTON_AddClick(Sender : TObject);
-begin
-  readGrocEntry;
-  saveGroc;
-end;
+  begin
+    readGrocEntry;
+    saveGroc;
+  end;
+
 
 procedure TGrocEntry.EDIT_FatChange(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.EDIT_CarbChange(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.EDIT_CalChange(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.EDIT_SugarChange(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.EDIT_SaltChange(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.EDIT_SatFatChange(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.EDIT_FibreChange(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.LABEL_CarbClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.LABEL_CalClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.LABEL_MacroTitleClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.LABEL_SugarClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.LABEL_FibreClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.LABEL_SaltClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.LABEL_SatFatClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.PANEL_WhiteLineClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
 
 
-//////////////////////////////////////////////////
-///////////((///////  LABELS  ////////////////////
-//////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////
+/////////////////////////////   LABELS   /////////////////////////////
+//////////////////////////////////////////////////////////////////////
 
 
 procedure TGrocEntry.LABEL_CropNameClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
 
 
 procedure TGrocEntry.LABEL_CropTypeClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
 
 
 procedure TGrocEntry.LABEL_BrandClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
 
 
 procedure TGrocEntry.LABEL_PortionTypeClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
 
 
 procedure TGrocEntry.LABEL_PortionSizeClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.LABEL_ProteinClick(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
 
 
-///////////////////////////////////////////////////
-/////////////////////  EDITS  /////////////////////
-///////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////   EDITS   /////////////////////////////
+/////////////////////////////////////////////////////////////////////
 
 
 procedure TGrocEntry.EDIT_CropNameChange(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
 
 
 procedure TGrocEntry.EDIT_CropTypeChange(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
 
 
 procedure TGrocEntry.EDIT_BrandChange(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
 
 
 procedure TGrocEntry.EDIT_PortionTypeChange(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
+
 
 procedure TGrocEntry.EDIT_PortionSizeChange(Sender : TObject);
-begin
+  begin
 
-end;
+  end;
 
 
-
-end.
+END.
 
