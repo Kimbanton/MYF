@@ -19,7 +19,8 @@ var
   jsonGroc: TJSONObject;
   jsonFile: Text;
   jsonString: String;
-  outputPath : String;
+  currentDir : String;
+  jsonFileName : String;
 
 implementation
 

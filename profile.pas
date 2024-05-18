@@ -51,9 +51,11 @@ var
   weekDurRaw, dayDur, weekDur, monthDur, yearDur, dur : Real;
 
   {### JSON-related ###}
-  jsonString, outputPath : String;
+  jsonString: String;
   jsonObject: TJSONObject; //creates JSON Object
   jsonFile: Text;
+  jsonFileName : String;
+  currentDir, fullPath : String;
 
 
 implementation
@@ -370,6 +372,15 @@ procedure calcDailyCal;
 {### creates JSON with a user profile ###}
 procedure createNewProfile;
 begin
+  {### sets name of JSON file ###}
+  jsonFileName := 'profiles.json';
+
+  {### sets JSON file location to current directory ###}
+  currentDir := extractfilepath(ParamStr(0));
+
+  {### constructs full path to JSON file ###}
+  fullPath := currentDir + jsonFileName;
+
   {### creates JSON object ###}
   jsonObject := TJSONObject.create;
   jsonObject.add('yourName', yourName);
@@ -392,16 +403,23 @@ begin
   {### converts JSON object to String ###}
   jsonString := jsonObject.FormatJSON;
 
-  {### sets JSON file location to current directory ###}
-  outputPath := extractfilepath(ParamStr(0));
-
-  {### saves JSON string to file ###}
-  assign(jsonFile, outputPath + 'profiles.json');
-  append(jsonFile); //starts writing at the last line
-  write(jsonFile, jsonString);
-  append(jsonFile);
-  writeln(jsonFile, ''); //empty extra line at the end
-  close(jsonFile);
+  if fileexists(fullPath) //checks if 'profiles.json' already exists
+    then
+      begin
+        {### saves JSON string to file ###}
+        assign(jsonFile, fullPath);
+        append(jsonFile); //starts writing at the last line
+        write(jsonFile, jsonString);
+        append(jsonFile);
+        writeln(jsonFile, ''); //empty extra line at the end
+        close(jsonFile);
+      end
+    else
+      begin
+        assign(jsonFile, fullPath);
+        rewrite(jsonFile);
+        close(jsonFile);
+      end;
 
   {### frees memory ###}
   jsonObject.free;

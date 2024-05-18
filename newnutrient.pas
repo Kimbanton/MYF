@@ -140,8 +140,11 @@ procedure readGrocEntry;
 {### adds grocery to JSON file ###}
 procedure saveGroc;
   begin
+    {sets name of JSON file}
+    jsonFileName := 'groclist.json';
+
     {sets JSON file location to current directory}
-    outputPath := extractfilepath(ParamStr(0));
+    currentDir := extractfilepath(ParamStr(0));
 
     {creates new JSON object, if file doesn't exist}
     jsonGroc := TJSONObject.create;
@@ -165,7 +168,7 @@ procedure saveGroc;
     jsonString := jsonGroc.FormatJSON;
 
     {saves JSON string to file}
-    assign(jsonFile, outputPath + 'groclist.json');
+    assign(jsonFile, currentDir + jsonFileName);
     append(jsonFile); //starts writing at the last line of JSON file
     write(jsonFile, jsonString); //writes all the data to the JSON file
     append(jsonFile);
