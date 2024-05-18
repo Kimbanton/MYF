@@ -11,7 +11,7 @@
         <EditorIndex Value="4"/>
         <TopLine Value="13"/>
         <CursorPos X="19" Y="30"/>
-        <UsageCount Value="53"/>
+        <UsageCount Value="54"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -21,20 +21,19 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="NewNutrient"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="139"/>
-        <CursorPos X="5" Y="143"/>
-        <UsageCount Value="47"/>
+        <TopLine Value="181"/>
+        <CursorPos X="20" Y="187"/>
+        <UsageCount Value="48"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="profile.pas"/>
         <UnitName Value="Profile"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
-        <TopLine Value="396"/>
-        <CursorPos X="23" Y="409"/>
+        <TopLine Value="40"/>
+        <CursorPos X="23" Y="58"/>
         <UsageCount Value="26"/>
         <Loaded Value="True"/>
       </Unit>
@@ -59,10 +58,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Gui"/>
-        <CursorPos Y="81"/>
+        <TopLine Value="69"/>
+        <CursorPos X="3" Y="90"/>
         <UsageCount Value="25"/>
         <Loaded Value="True"/>
-        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="/usr/lib/lazarus/2.2.0/lcl/include/customform.inc"/>
@@ -76,7 +75,7 @@
         <UnitName Value="GrocList"/>
         <EditorIndex Value="2"/>
         <TopLine Value="7"/>
-        <CursorPos X="4" Y="16"/>
+        <CursorPos X="3" Y="20"/>
         <UsageCount Value="19"/>
         <Loaded Value="True"/>
       </Unit>
@@ -212,26 +211,6 @@
     <JumpHistory HistoryIndex="29">
       <Position>
         <Filename Value="newnutrient.pas"/>
-        <Caret Line="188" TopLine="172"/>
-      </Position>
-      <Position>
-        <Filename Value="newnutrient.pas"/>
-        <Caret Line="189" TopLine="173"/>
-      </Position>
-      <Position>
-        <Filename Value="newnutrient.pas"/>
-        <Caret Line="190" TopLine="174"/>
-      </Position>
-      <Position>
-        <Filename Value="newnutrient.pas"/>
-        <Caret Line="191" TopLine="175"/>
-      </Position>
-      <Position>
-        <Filename Value="newnutrient.pas"/>
-        <Caret Line="192" TopLine="176"/>
-      </Position>
-      <Position>
-        <Filename Value="newnutrient.pas"/>
         <Caret Line="193" TopLine="177"/>
       </Position>
       <Position>
@@ -329,6 +308,26 @@
       <Position>
         <Filename Value="profile.pas"/>
         <Caret Line="416" Column="10" TopLine="403"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="161" Column="22" TopLine="141"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="149" Column="10" TopLine="141"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="182" Column="27" TopLine="160"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="190" Column="28" TopLine="177"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="189" Column="40" TopLine="178"/>
       </Position>
     </JumpHistory>
     <RunParams>

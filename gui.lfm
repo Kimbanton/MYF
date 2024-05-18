@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 434
+  Left = 470
   Height = 691
-  Top = 183
+  Top = 180
   Width = 1071
   Caption = 'Kalorien-Tracker'
   ClientHeight = 691

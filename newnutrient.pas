@@ -140,16 +140,19 @@ procedure readGrocEntry;
 {### adds grocery to JSON file ###}
 procedure saveGroc;
   begin
-    {sets name of JSON file}
+    {### sets name of JSON file ###}
     jsonFileName := 'groclist.json';
 
-    {sets JSON file location to current directory}
+    {### sets JSON file location to current directory ###}
     currentDir := extractfilepath(ParamStr(0));
 
-    {creates new JSON object, if file doesn't exist}
+    {### constructs full path to JSON file ###}
+    fullPath := currentDir + jsonFileName;
+
+    {### creates new JSON object, if file doesn't exist ###}
     jsonGroc := TJSONObject.create;
 
-    {adds new input data to existing JSON object}
+    {### adds new input data to JSON object ###}
     jsonGroc.add('cropName', cropName);
     jsonGroc.add('cropType', cropType);
     jsonGroc.add('brand', brand);
@@ -164,19 +167,37 @@ procedure saveGroc;
     jsonGroc.add('fibre', fibre);
     jsonGroc.add('cal', cal);
 
-    {converts JSON object to string}
+    {### converts JSON object to string ###}
     jsonString := jsonGroc.FormatJSON;
 
-    {saves JSON string to file}
-    assign(jsonFile, currentDir + jsonFileName);
-    append(jsonFile); //starts writing at the last line of JSON file
-    write(jsonFile, jsonString); //writes all the data to the JSON file
-    append(jsonFile);
-    writeln(jsonFile, ''); //adds an empty line at the end
-    close(jsonFile);
+    if fileexists(fullPath) //checks if 'profiles.json' already exists
+      then
+        begin
+          {### saves input to existing JSON file ###}
+          assign(jsonFile, fullPath);
+          append(jsonFile); //starts writing at last line of JSON file
+          write(jsonFile, jsonString); //writes all data to JSON file
+          append(jsonFile);
+          writeln(jsonFile, ''); //adds an empty line at end
+          close(jsonFile);
+        end
+      else
+        begin
+          {### creates new JSON file ###}
+          assign(jsonFile, fullPath);
+          rewrite(jsonFile); //creates empty 'profiles.json' file
+          append(jsonFile);
+          write(jsonFile, jsonString);
+          append(jsonFile);
+          writeln(jsonFile, '');
+          close(jsonFile);
+        end;
 
-    {frees memory to prevent unnecessary memory leak}
+    {### frees memory to prevent unnecessary memory leak ###}
     jsonGroc.free;
+
+    {### closes the "+ Nahrung" pop-up window ###}
+    GrocEntry.close;
   end;
 
 

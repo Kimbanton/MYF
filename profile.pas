@@ -383,6 +383,8 @@ begin
 
   {### creates JSON object ###}
   jsonObject := TJSONObject.create;
+
+  {### adds new input data to JSON object ###}
   jsonObject.add('yourName', yourName);
   jsonObject.add('sex', sex);
   jsonObject.add('yourAge', yourAge);
@@ -406,18 +408,23 @@ begin
   if fileexists(fullPath) //checks if 'profiles.json' already exists
     then
       begin
-        {### saves JSON string to file ###}
+        {### saves input to existing JSON file ###}
         assign(jsonFile, fullPath);
-        append(jsonFile); //starts writing at the last line
+        append(jsonFile); //starts writing at last line
         write(jsonFile, jsonString);
         append(jsonFile);
-        writeln(jsonFile, ''); //empty extra line at the end
+        writeln(jsonFile, ''); //empty extra line at end
         close(jsonFile);
       end
     else
       begin
+        {### creates new JSON file ###}
         assign(jsonFile, fullPath);
-        rewrite(jsonFile);
+        rewrite(jsonFile); //creates empty 'profiles.json' file
+        append(jsonFile);
+        write(jsonFile, jsonString);
+        append(jsonFile);
+        writeln(jsonFile, '');
         close(jsonFile);
       end;
 
