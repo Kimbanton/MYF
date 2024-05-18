@@ -9,7 +9,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="CalorieTracker"/>
         <EditorIndex Value="4"/>
-        <UsageCount Value="46"/>
+        <CursorPos X="6" Y="10"/>
+        <UsageCount Value="51"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -21,9 +22,9 @@
         <UnitName Value="NewNutrient"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="154"/>
-        <CursorPos X="35" Y="164"/>
-        <UsageCount Value="40"/>
+        <TopLine Value="139"/>
+        <CursorPos X="46" Y="154"/>
+        <UsageCount Value="45"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
       </Unit>
@@ -31,7 +32,9 @@
         <Filename Value="profile.pas"/>
         <UnitName Value="Profile"/>
         <EditorIndex Value="3"/>
-        <UsageCount Value="23"/>
+        <TopLine Value="388"/>
+        <CursorPos X="41" Y="396"/>
+        <UsageCount Value="25"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -55,10 +58,11 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Gui"/>
-        <CursorPos X="49" Y="98"/>
-        <ComponentState Value="1"/>
-        <UsageCount Value="22"/>
+        <TopLine Value="70"/>
+        <CursorPos Y="81"/>
+        <UsageCount Value="24"/>
         <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
       </Unit>
       <Unit>
         <Filename Value="/usr/lib/lazarus/2.2.0/lcl/include/customform.inc"/>
@@ -71,8 +75,8 @@
         <Filename Value="groclist.pas"/>
         <UnitName Value="GrocList"/>
         <EditorIndex Value="2"/>
-        <CursorPos X="42" Y="21"/>
-        <UsageCount Value="16"/>
+        <CursorPos X="22" Y="21"/>
+        <UsageCount Value="18"/>
         <Loaded Value="True"/>
       </Unit>
       <Unit>
@@ -98,8 +102,8 @@
       <Unit>
         <Filename Value="/usr/share/fpcsrc/3.2.2/packages/fcl-json/src/fpjson.pp"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="597"/>
-        <CursorPos X="3" Y="604"/>
+        <TopLine Value="709"/>
+        <CursorPos X="14" Y="719"/>
         <UsageCount Value="11"/>
       </Unit>
       <Unit>
@@ -197,28 +201,14 @@
         <CursorPos Y="22"/>
         <UsageCount Value="10"/>
       </Unit>
+      <Unit>
+        <Filename Value="../../Temp/newnutrient.pas"/>
+        <UnitName Value="NewNutrient"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit>
     </Units>
-    <JumpHistory HistoryIndex="29">
-      <Position>
-        <Filename Value="newnutrient.pas"/>
-        <Caret Line="173" TopLine="165"/>
-      </Position>
-      <Position>
-        <Filename Value="newnutrient.pas"/>
-        <Caret Line="156" Column="39" TopLine="140"/>
-      </Position>
-      <Position>
-        <Filename Value="newnutrient.pas"/>
-        <Caret Line="151" TopLine="140"/>
-      </Position>
-      <Position>
-        <Filename Value="newnutrient.pas"/>
-        <Caret Line="153" Column="85" TopLine="140"/>
-      </Position>
-      <Position>
-        <Filename Value="newnutrient.pas"/>
-        <Caret Line="168" Column="39" TopLine="159"/>
-      </Position>
+    <JumpHistory HistoryIndex="28">
       <Position>
         <Filename Value="newnutrient.pas"/>
         <Caret Line="150" TopLine="140"/>
@@ -318,6 +308,22 @@
       <Position>
         <Filename Value="newnutrient.pas"/>
         <Caret Line="205" TopLine="189"/>
+      </Position>
+      <Position>
+        <Filename Value="calorietracker.lpr"/>
+        <Caret Line="20" Column="13" TopLine="8"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="367" Column="7"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="176" Column="15" TopLine="150"/>
+      </Position>
+      <Position>
+        <Filename Value="newnutrient.pas"/>
+        <Caret Line="152" Column="15" TopLine="143"/>
       </Position>
     </JumpHistory>
     <RunParams>

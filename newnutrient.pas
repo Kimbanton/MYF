@@ -141,62 +141,39 @@ procedure readGrocEntry;
 procedure saveGroc;
   begin
     {sets JSON file location to current directory}
-    outputPath := ExtractFilePath(ParamStr(0));
+    outputPath := extractfilepath(ParamStr(0));
 
-//    {appends "groclist" folder as source code's directory path}
-//    outputPath := IncludeTrailingPathDelimiter(outputPath) + PathDelim + 'groclist';
-
-//    {ensures the 'groclist' folder exists, creates it if it doesn't}
-//    if not DirectoryExists(outputPath)
-//      then CreateDir(outputPath);
-
-    {checks if the JSON file already exists}
-    if FileExists(outputPath + 'groclist.json')
-      then
-        begin
-          {reads existing JSON data}
-          existingJsonString := '';
-          assign(existingJsonFile, outputPath + 'groclist.json');
-          reset(existingJsonFile);
-          while not Eof(existingJsonFile) do
-            readln(existingJsonFile, existingJsonLine);
-            existingJsonString := existingJsonString + existingJsonLine;
-          close(existingJsonFile);
-
-          {parses existing JSON data}
-          jsonGroc := TJSONObject(GetJSON(existingJsonString));
-        end
-      else
-        begin
-          jsonGroc := TJSONObject.create; //creates new JSON object, if file doesn't exist
-        end;
+    {creates new JSON object, if file doesn't exist}
+    jsonGroc := TJSONObject.create;
 
     {adds new input data to existing JSON object}
-    jsonGroc.Add('cropName', cropName);
-    jsonGroc.Add('cropType', cropType);
-    jsonGroc.Add('brand', brand);
-    jsonGroc.Add('portionType', portionType);
-    jsonGroc.Add('portionSize', portionSize);
-    jsonGroc.Add('protein', protein);
-    jsonGroc.Add('fat', fat);
-    jsonGroc.Add('carb', carb);
-    jsonGroc.Add('sugar', sugar);
-    jsonGroc.Add('salt', salt);
-    jsonGroc.Add('satFat', satFat);
-    jsonGroc.Add('fibre', fibre);
-    jsonGroc.Add('cal', cal);
+    jsonGroc.add('cropName', cropName);
+    jsonGroc.add('cropType', cropType);
+    jsonGroc.add('brand', brand);
+    jsonGroc.add('portionType', portionType);
+    jsonGroc.add('portionSize', portionSize);
+    jsonGroc.add('protein', protein);
+    jsonGroc.add('fat', fat);
+    jsonGroc.add('carb', carb);
+    jsonGroc.add('sugar', sugar);
+    jsonGroc.add('salt', salt);
+    jsonGroc.add('satFat', satFat);
+    jsonGroc.add('fibre', fibre);
+    jsonGroc.add('cal', cal);
 
     {converts JSON object to string}
     jsonString := jsonGroc.FormatJSON;
 
     {saves JSON string to file}
     assign(jsonFile, outputPath + 'groclist.json');
-    rewrite(jsonFile);
-    write(jsonFile, jsonString);
+    append(jsonFile); //starts writing at the last line of JSON file
+    write(jsonFile, jsonString); //writes all the data to the JSON file
+    append(jsonFile);
+    writeln(jsonFile, ''); //adds an empty line at the end
     close(jsonFile);
 
     {frees memory to prevent unnecessary memory leak}
-    jsonGroc.Free;
+    jsonGroc.free;
   end;
 
 

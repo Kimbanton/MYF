@@ -17,9 +17,8 @@ var
   cropName, cropType, brand, portionType : String;
   portionSize, protein, fat, carb, sugar, salt, satFat, fibre, cal : Real;
   jsonGroc: TJSONObject;
-  jsonFile, existingJsonFile: Text;
-  jsonString, existingJsonString : String;
-  existingJsonLine : String;
+  jsonFile: Text;
+  jsonString: String;
   outputPath : String;
 
 implementation

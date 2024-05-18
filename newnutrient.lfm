@@ -1,7 +1,7 @@
 object GrocEntry: TGrocEntry
-  Left = 2274
+  Left = 590
   Height = 496
-  Top = 172
+  Top = 298
   Width = 945
   Caption = 'Neue Nahrung'
   ClientHeight = 496

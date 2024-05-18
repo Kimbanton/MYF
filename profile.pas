@@ -45,10 +45,13 @@ var
   {### program-only ###}
   sex : Char;
   i : Integer;
-  weightCondition, weekActOption, durUnit, jsonString, outputPath : String;
+  weightCondition, weekActOption, durUnit : String;
   bmi, initWeight, optWeight, weightDiff, bmr, cal, dailyCal : Real;
   weekLGDurFunction, monthLGDurFunction, yearLGDurFunction : Real;
   weekDurRaw, dayDur, weekDur, monthDur, yearDur, dur : Real;
+
+  {### JSON-related ###}
+  jsonString, outputPath : String;
   jsonObject: TJSONObject; //creates JSON Object
   jsonFile: Text;
 
@@ -368,38 +371,40 @@ procedure calcDailyCal;
 procedure createNewProfile;
 begin
   {### creates JSON object ###}
-  jsonObject := TJSONObject.Create;
-  jsonObject.Add('yourName', yourName);
-  jsonObject.Add('sex', sex);
-  jsonObject.Add('yourAge', yourAge);
-  jsonObject.Add('yourHeight', yourHeight);
-  jsonObject.Add('currentWeight', currentWeight);
-  //jsonObject.Add('weekAct', weekAct);
-  //jsonObject.Add('TDietGoal', TDietGoal);
-  //jsonObject.Add('TRateOption', TRateOption);
-  jsonObject.Add('targetWeight', targetWeight);
-  jsonObject.Add('weightCondition', weightCondition);
-  jsonObject.Add('bmi', bmi);
-  jsonObject.Add('optWeight', optWeight);
-  jsonObject.Add('dur', dur);
-  jsonObject.Add('durUnit', durUnit);
-  jsonObject.Add('cal', cal);
-  jsonObject.Add('dailyCal', dailyCal);
+  jsonObject := TJSONObject.create;
+  jsonObject.add('yourName', yourName);
+  jsonObject.add('sex', sex);
+  jsonObject.add('yourAge', yourAge);
+  jsonObject.add('yourHeight', yourHeight);
+  jsonObject.add('currentWeight', currentWeight);
+  //jsonObject.add('weekAct', weekAct);
+  //jsonObject.add('TDietGoal', TDietGoal);
+  //jsonObject.add('TRateOption', TRateOption);
+  jsonObject.add('targetWeight', targetWeight);
+  jsonObject.add('weightCondition', weightCondition);
+  jsonObject.add('bmi', bmi);
+  jsonObject.add('optWeight', optWeight);
+  jsonObject.add('dur', dur);
+  jsonObject.add('durUnit', durUnit);
+  jsonObject.add('cal', cal);
+  jsonObject.add('dailyCal', dailyCal);
 
   {### converts JSON object to String ###}
   jsonString := jsonObject.FormatJSON;
 
   {### sets JSON file location to current directory ###}
-  outputPath := ExtractFilePath(ParamStr(0));
+  outputPath := extractfilepath(ParamStr(0));
 
   {### saves JSON string to file ###}
-  Assign(jsonFile, outputPath + 'profiles.json');
-  Rewrite(jsonFile);
-  Write(jsonFile, jsonString);
-  Close(jsonFile);
+  assign(jsonFile, outputPath + 'profiles.json');
+  append(jsonFile); //starts writing at the last line
+  write(jsonFile, jsonString);
+  append(jsonFile);
+  writeln(jsonFile, ''); //empty extra line at the end
+  close(jsonFile);
 
   {### frees memory ###}
-  jsonObject.Free;
+  jsonObject.free;
 end;
 
 
