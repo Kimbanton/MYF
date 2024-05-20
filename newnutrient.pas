@@ -18,6 +18,7 @@ type
   TGrocEntry = class(TForm)
 
     PANEL_Groc : TPanel;
+      LABEL_Barcode : TLabel;
       LABEL_GrocTitle : TLabel;
       LABEL_CropName : TLabel;
       LABEL_CropType : TLabel;
@@ -25,13 +26,6 @@ type
       LABEL_PortionType : TLabel;
       LABEL_PortionSize : TLabel;
 
-      EDIT_CropName : TEdit;
-      EDIT_CropType : TEdit;
-      EDIT_Brand : TEdit;
-      EDIT_PortionType : TEdit;
-      EDIT_PortionSize : TEdit;
-
-    PANEL_Macro : TPanel;
       LABEL_MacroTitle : TLabel;
       LABEL_Protein : TLabel;
       LABEL_Fat : TLabel;
@@ -41,6 +35,15 @@ type
       LABEL_Fibre : TLabel;
       LABEL_Salt : TLabel;
       LABEL_SatFat : TLabel;
+
+
+    PANEL_Macro : TPanel;
+      EDIT_Barcode : TEdit;
+      EDIT_CropName : TEdit;
+      EDIT_CropType : TEdit;
+      EDIT_Brand : TEdit;
+      EDIT_PortionType : TEdit;
+      EDIT_PortionSize : TEdit;
 
       EDIT_Protein : TEdit;
       EDIT_Fat : TEdit;
@@ -65,6 +68,7 @@ type
     procedure EDIT_SaltChange(Sender : TObject);
     procedure EDIT_SatFatChange(Sender : TObject);
     procedure EDIT_FibreChange(Sender : TObject);
+    procedure LABEL_BarcodeClick(Sender : TObject);
     procedure LABEL_FatClick(Sender : TObject);
     procedure LABEL_CarbClick(Sender : TObject);
     procedure LABEL_CalClick(Sender : TObject);
@@ -76,6 +80,7 @@ type
     procedure PANEL_WhiteLineClick(Sender : TObject);
     procedure PANEL_MacroClick(Sender : TObject);
     procedure PANEL_GrocClick(Sender : TObject);
+    procedure EDIT_BarcodeChange(Sender : TObject);
     procedure EDIT_CropNameChange(Sender : TObject);
     procedure EDIT_CropTypeChange(Sender : TObject);
     procedure EDIT_BrandChange(Sender : TObject);
@@ -121,19 +126,20 @@ implementation
 {### reads input in the "Neue Nahrung" Window ###}
 procedure readGrocEntry;
   begin
-    cropName := GrocEntry.EDIT_CropName.Text;
-    cropType := GrocEntry.EDIT_CropType.Text;
-    brand := GrocEntry.EDIT_Brand.Text;
-    portionType := GrocEntry.EDIT_PortionType.Text;
-    portionSize := StrToFloatDef(GrocEntry.EDIT_PortionSize.Text, 0.0);
-    protein := StrToFloatDef(GrocEntry.EDIT_Protein.Text, 0.0);
-    fat := StrToFloatDef(GrocEntry.EDIT_Fat.Text, 0.0);
-    carb := StrToFloatDef(GrocEntry.EDIT_Carb.Text, 0.0);
-    sugar := StrToFloatDef(GrocEntry.EDIT_Sugar.Text, 0.0);
-    salt := StrToFloatDef(GrocEntry.EDIT_Salt.Text, 0.0);
-    satFat := StrToFloatDef(GrocEntry.EDIT_SatFat.Text, 0.0);
-    fibre := StrToFloatDef(GrocEntry.EDIT_Fibre.Text, 0.0);
-    cal := StrToFloatDef(GrocEntry.EDIT_Cal.Text, 0.0);
+    groc.barcode := StrToIntDef(GrocEntry.EDIT_Barcode.Text, 0);
+    groc.cropName := GrocEntry.EDIT_CropName.Text;
+    groc.cropType := GrocEntry.EDIT_CropType.Text;
+    groc.brand := GrocEntry.EDIT_Brand.Text;
+    groc.portionType := GrocEntry.EDIT_PortionType.Text;
+    groc.portionSize := StrToFloatDef(GrocEntry.EDIT_PortionSize.Text, 0.0);
+    groc.protein := StrToFloatDef(GrocEntry.EDIT_Protein.Text, 0.0);
+    groc.fat := StrToFloatDef(GrocEntry.EDIT_Fat.Text, 0.0);
+    groc.carb := StrToFloatDef(GrocEntry.EDIT_Carb.Text, 0.0);
+    groc.sugar := StrToFloatDef(GrocEntry.EDIT_Sugar.Text, 0.0);
+    groc.salt := StrToFloatDef(GrocEntry.EDIT_Salt.Text, 0.0);
+    groc.satFat := StrToFloatDef(GrocEntry.EDIT_SatFat.Text, 0.0);
+    groc.fibre := StrToFloatDef(GrocEntry.EDIT_Fibre.Text, 0.0);
+    groc.cal := StrToFloatDef(GrocEntry.EDIT_Cal.Text, 0.0);
   end;
 
 
@@ -153,19 +159,20 @@ procedure saveGroc;
     jsonGroc := TJSONObject.create;
 
     {### adds new input data to JSON object ###}
-    jsonGroc.add('cropName', cropName);
-    jsonGroc.add('cropType', cropType);
-    jsonGroc.add('brand', brand);
-    jsonGroc.add('portionType', portionType);
-    jsonGroc.add('portionSize', portionSize);
-    jsonGroc.add('protein', protein);
-    jsonGroc.add('fat', fat);
-    jsonGroc.add('carb', carb);
-    jsonGroc.add('sugar', sugar);
-    jsonGroc.add('salt', salt);
-    jsonGroc.add('satFat', satFat);
-    jsonGroc.add('fibre', fibre);
-    jsonGroc.add('cal', cal);
+    jsonGroc.add('barcode', groc.barcode);
+    jsonGroc.add('cropName', groc.cropName);
+    jsonGroc.add('cropType', groc.cropType);
+    jsonGroc.add('brand', groc.brand);
+    jsonGroc.add('portionType', groc.portionType);
+    jsonGroc.add('portionSize', groc.portionSize);
+    jsonGroc.add('protein', groc.protein);
+    jsonGroc.add('fat', groc.fat);
+    jsonGroc.add('carb', groc.carb);
+    jsonGroc.add('sugar', groc.sugar);
+    jsonGroc.add('salt', groc.salt);
+    jsonGroc.add('satFat', groc.satFat);
+    jsonGroc.add('fibre', groc.fibre);
+    jsonGroc.add('cal', groc.cal);
 
     {### converts JSON object to string ###}
     jsonString := jsonGroc.FormatJSON;
@@ -195,11 +202,26 @@ procedure saveGroc;
 
     {### frees memory to prevent unnecessary memory leak ###}
     jsonGroc.free;
-
-    {### closes the "+ Nahrung" pop-up window ###}
-    GrocEntry.close;
   end;
 
+{### deletes the input of the EDIT-wigdets from "GrocEntry"}
+procedure emptyGrocEntry;
+  begin
+    GrocEntry.EDIT_Barcode.Text := '';
+    GrocEntry.EDIT_CropName.Text := '';
+    GrocEntry.EDIT_CropType.Text := '';
+    GrocEntry.EDIT_Brand.Text := '';
+    GrocEntry.EDIT_PortionType.Text := '';
+    GrocEntry.EDIT_PortionSize.Text := '';
+    GrocEntry.EDIT_Protein.Text := '';
+    GrocEntry.EDIT_Fat.Text := '';
+    GrocEntry.EDIT_Carb.Text := '';
+    GrocEntry.EDIT_Sugar.Text := '';
+    GrocEntry.EDIT_Salt.Text := '';
+    GrocEntry.EDIT_SatFat.Text := '';
+    GrocEntry.EDIT_Fibre.Text := '';
+    GrocEntry.EDIT_Cal.Text := '';
+  end;
 
 //////////////////////////////////////////////////////////////////////////
 //######################################################################//
@@ -236,16 +258,24 @@ procedure TGrocEntry.LABEL_FatClick(Sender : TObject);
   end;
 
 
-procedure TGrocEntry.EDIT_ProteinChange(Sender : TObject);
+procedure TGrocEntry.BUTTON_AddClick(Sender : TObject);
+  begin
+    readGrocEntry;
+    saveGroc;
+    GrocEntry.close; //closes the "GrocEntry" window
+    emptyGrocEntry;
+  end;
+
+
+procedure TGrocEntry.LABEL_MacroTitleClick(Sender : TObject);
   begin
 
   end;
 
 
-procedure TGrocEntry.BUTTON_AddClick(Sender : TObject);
+procedure TGrocEntry.EDIT_ProteinChange(Sender : TObject);
   begin
-    readGrocEntry;
-    saveGroc;
+
   end;
 
 
@@ -303,35 +333,6 @@ procedure TGrocEntry.LABEL_CalClick(Sender : TObject);
   end;
 
 
-procedure TGrocEntry.LABEL_MacroTitleClick(Sender : TObject);
-  begin
-
-  end;
-
-
-procedure TGrocEntry.LABEL_SugarClick(Sender : TObject);
-  begin
-
-  end;
-
-
-procedure TGrocEntry.LABEL_FibreClick(Sender : TObject);
-  begin
-
-  end;
-
-
-procedure TGrocEntry.LABEL_SaltClick(Sender : TObject);
-  begin
-
-  end;
-
-
-procedure TGrocEntry.LABEL_SatFatClick(Sender : TObject);
-  begin
-
-  end;
-
 
 procedure TGrocEntry.PANEL_WhiteLineClick(Sender : TObject);
   begin
@@ -342,6 +343,12 @@ procedure TGrocEntry.PANEL_WhiteLineClick(Sender : TObject);
 //////////////////////////////////////////////////////////////////////
 /////////////////////////////   LABELS   /////////////////////////////
 //////////////////////////////////////////////////////////////////////
+
+
+procedure TGrocEntry.LABEL_BarcodeClick(Sender : TObject);
+  begin
+
+  end;
 
 
 procedure TGrocEntry.LABEL_CropNameClick(Sender : TObject);
@@ -380,9 +387,38 @@ procedure TGrocEntry.LABEL_ProteinClick(Sender : TObject);
   end;
 
 
+procedure TGrocEntry.LABEL_SugarClick(Sender : TObject);
+  begin
+
+  end;
+
+
+procedure TGrocEntry.LABEL_SaltClick(Sender : TObject);
+  begin
+
+  end;
+
+
+procedure TGrocEntry.LABEL_SatFatClick(Sender : TObject);
+  begin
+
+  end;
+
+
+procedure TGrocEntry.LABEL_FibreClick(Sender : TObject);
+  begin
+
+  end;
+
+
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////   EDITS   /////////////////////////////
 /////////////////////////////////////////////////////////////////////
+
+procedure TGrocEntry.EDIT_BarcodeChange(Sender : TObject);
+  begin
+
+  end;
 
 
 procedure TGrocEntry.EDIT_CropNameChange(Sender : TObject);

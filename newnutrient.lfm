@@ -1,20 +1,20 @@
 object GrocEntry: TGrocEntry
-  Left = 581
-  Height = 496
-  Top = 299
+  Left = 544
+  Height = 548
+  Top = 268
   Width = 945
   Caption = 'Neue Nahrung'
-  ClientHeight = 496
+  ClientHeight = 548
   ClientWidth = 945
   Color = clTeal
   LCLVersion = '2.2.0.4'
   object PANEL_Groc: TPanel
     Left = 0
-    Height = 496
+    Height = 548
     Top = 0
     Width = 352
     Align = alLeft
-    ClientHeight = 496
+    ClientHeight = 548
     ClientWidth = 352
     Color = clBtnShadow
     ParentColor = False
@@ -34,9 +34,9 @@ object GrocEntry: TGrocEntry
     object LABEL_CropName: TLabel
       Left = 24
       Height = 19
-      Top = 80
-      Width = 132
-      Caption = 'Nahrungsmittel*:'
+      Top = 144
+      Width = 136
+      Caption = 'Nahrungsmittel: *'
       Font.Color = clWhite
       Font.Style = [fsBold]
       ParentFont = False
@@ -45,7 +45,7 @@ object GrocEntry: TGrocEntry
     object LABEL_CropType: TLabel
       Left = 24
       Height = 19
-      Top = 160
+      Top = 224
       Width = 100
       Caption = 'Nahrungsart:'
       Font.Color = clWhite
@@ -56,7 +56,7 @@ object GrocEntry: TGrocEntry
     object LABEL_Brand: TLabel
       Left = 24
       Height = 19
-      Top = 240
+      Top = 304
       Width = 52
       Caption = 'Marke:'
       Font.Color = clWhite
@@ -67,7 +67,7 @@ object GrocEntry: TGrocEntry
     object LABEL_PortionType: TLabel
       Left = 24
       Height = 19
-      Top = 320
+      Top = 384
       Width = 93
       Caption = 'Portionsart:'
       Font.Color = clWhite
@@ -78,7 +78,7 @@ object GrocEntry: TGrocEntry
     object LABEL_PortionSize: TLabel
       Left = 24
       Height = 19
-      Top = 400
+      Top = 464
       Width = 121
       Caption = 'Portionsmenge:'
       Font.Color = clWhite
@@ -89,7 +89,7 @@ object GrocEntry: TGrocEntry
     object EDIT_CropName: TEdit
       Left = 24
       Height = 31
-      Top = 104
+      Top = 168
       Width = 304
       Color = 13684944
       Font.Color = clBlack
@@ -101,7 +101,7 @@ object GrocEntry: TGrocEntry
     object EDIT_CropType: TEdit
       Left = 24
       Height = 31
-      Top = 185
+      Top = 249
       Width = 304
       Color = 13684944
       Font.Color = clBlack
@@ -112,7 +112,7 @@ object GrocEntry: TGrocEntry
     object EDIT_Brand: TEdit
       Left = 24
       Height = 31
-      Top = 264
+      Top = 328
       Width = 304
       Color = 13684944
       Font.Color = clBlack
@@ -123,7 +123,7 @@ object GrocEntry: TGrocEntry
     object EDIT_PortionType: TEdit
       Left = 24
       Height = 31
-      Top = 344
+      Top = 408
       Width = 304
       Color = 13684944
       Font.Color = clBlack
@@ -134,7 +134,7 @@ object GrocEntry: TGrocEntry
     object EDIT_PortionSize: TEdit
       Left = 24
       Height = 31
-      Top = 424
+      Top = 488
       Width = 304
       Color = 13684944
       Font.Color = clBlack
@@ -142,14 +142,36 @@ object GrocEntry: TGrocEntry
       ParentFont = False
       TabOrder = 4
     end
+    object LABEL_Barcode: TLabel
+      Left = 24
+      Height = 19
+      Top = 64
+      Width = 68
+      Caption = 'Barcode:'
+      Font.Color = clWhite
+      Font.Style = [fsBold]
+      ParentFont = False
+      OnClick = LABEL_BarcodeClick
+    end
+    object EDIT_Barcode: TEdit
+      Left = 24
+      Height = 31
+      Top = 88
+      Width = 304
+      Color = 13684944
+      Font.Color = clBlack
+      OnChange = EDIT_BarcodeChange
+      ParentFont = False
+      TabOrder = 5
+    end
   end
   object PANEL_Macro: TPanel
     Left = 471
-    Height = 496
+    Height = 548
     Top = 0
     Width = 474
     Align = alRight
-    ClientHeight = 496
+    ClientHeight = 548
     ClientWidth = 474
     Color = 2829099
     Font.Style = [fsBold]
@@ -173,8 +195,8 @@ object GrocEntry: TGrocEntry
       Left = 40
       Height = 19
       Top = 88
-      Width = 61
-      Caption = 'Eiweiß*:'
+      Width = 67
+      Caption = 'Eiweiß: *'
       Font.Color = clWhite
       Font.Style = [fsBold]
       ParentFont = False
@@ -184,8 +206,8 @@ object GrocEntry: TGrocEntry
       Left = 40
       Height = 19
       Top = 128
-      Width = 44
-      Caption = 'Fett*:'
+      Width = 48
+      Caption = 'Fett: *'
       Font.Color = clWhite
       Font.Style = [fsBold]
       ParentFont = False
@@ -195,8 +217,8 @@ object GrocEntry: TGrocEntry
       Left = 40
       Height = 19
       Top = 168
-      Width = 124
-      Caption = 'Kohlenhydrate*:'
+      Width = 128
+      Caption = 'Kohlenhydrate: *'
       Font.Color = clWhite
       Font.Style = [fsBold]
       ParentFont = False
@@ -206,8 +228,8 @@ object GrocEntry: TGrocEntry
       Left = 40
       Height = 19
       Top = 208
-      Width = 77
-      Caption = 'Kalorien*:'
+      Width = 81
+      Caption = 'Kalorien: *'
       Font.Color = clWhite
       Font.Style = [fsBold]
       ParentFont = False
